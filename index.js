@@ -1,6 +1,23 @@
+// const sinon = ( 'sinon' );
+// const helpers =( './helpers' );
+// const chai = ( 'chai' );
+// const spies = ('chai-spies' );
+
+
+
+
+
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
-  
+  return fetch ("https://anapioficeandfire.com/api/books")
+  .then( function(response) {
+    console.log(response);
+    return response.json();
+  })
+ .then( function (books){
+  return renderBooks(books) 
+ }
+ )
 }
 
 function renderBooks(books) {
